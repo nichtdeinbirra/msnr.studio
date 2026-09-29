@@ -22,35 +22,36 @@ export type Project = {
   tagline: string;
   summary: string;
   highlights: string[];
-  link?: { label: string; href: string };
+  /** Short status badge, e.g. "Bald live". No public link until it launches. */
+  status?: string;
   shots: Shot[];
 };
 
 export const featured: Project = {
   slug: "offstg",
   name: "OFFSTG.",
-  tagline: "Event planning for club nights",
+  tagline: "Web-App für Eventplanung",
   summary:
-    "Club teams plan their nights across spreadsheets, group chats and paper. OFFSTG. puts it in one app: plan the event, sell tickets, check guests in at the door and see the numbers afterwards.",
-  highlights: ["QR check-in at the door, even offline", "Ticket presale with Stripe", "Profit and margin after every night"],
-  link: { label: "Open OFFSTG.", href: "https://sidestage-app.vercel.app" },
+    "Veranstalter planen Events oft über Tabellen, WhatsApp-Gruppen und Zettel. OFFSTG. bringt alles in eine App: Event planen, Tickets verkaufen, Gäste am Einlass einchecken und danach sehen, was hängen geblieben ist.",
+  highlights: ["QR-Check-in am Einlass, auch offline", "Ticket-Vorverkauf mit Stripe", "Gewinn und Marge nach jedem Event"],
+  status: "Bald live",
   shots: [
     {
       src: "/work/offstg/dashboard.png",
-      alt: "OFFSTG. dashboard with ticket numbers, upcoming events and budget",
-      caption: "Dashboard · example data",
+      alt: "OFFSTG. Dashboard mit Ticketzahlen, anstehenden Events und Budget",
+      caption: "Dashboard · Beispieldaten",
       device: "wide",
     },
     {
       src: "/work/offstg/overview.png",
-      alt: "OFFSTG. compact overview with KPIs and upcoming events",
-      caption: "Overview · example data",
+      alt: "OFFSTG. Übersicht mit Kennzahlen und anstehenden Events",
+      caption: "Übersicht · Beispieldaten",
       device: "panel",
     },
     {
       src: "/work/offstg/eventday.png",
-      alt: "OFFSTG. event-day mode with guest count, timetable and ticket scanner",
-      caption: "Event-day mode at the door · example data",
+      alt: "OFFSTG. Eventtag-Modus mit Gästezahl, Ablauf und Ticket-Scanner",
+      caption: "Eventtag-Modus am Einlass · Beispieldaten",
       device: "panel",
     },
   ],
@@ -60,11 +61,35 @@ export const more: { slug: string; name: string; summary: string }[] = [
   {
     slug: "ponyhof-portal",
     name: "Ponyhof Club Portal",
-    summary: "Events, tickets and gift vouchers for Ponyhof Club Frankfurt.",
+    summary: "Events, Tickets und Gutscheine für den Ponyhof Club Frankfurt.",
   },
   {
     slug: "ponyhof-tracker",
     name: "Ponyhof Marketing Tracker",
-    summary: "Campaigns, content calendar and Instagram posts for the club's marketing team.",
+    summary: "Kampagnen, Content-Kalender und Instagram-Posts für das Marketing-Team des Clubs.",
+  },
+];
+
+/** Self-initiated concepts. Fictional names and content, no real client shown. */
+export const concepts: {
+  slug: string;
+  name: string;
+  tagline: string;
+  summary: string;
+  href: string;
+  shots: { desktop: string; phone: string; alt: string };
+}[] = [
+  {
+    slug: "kante",
+    name: "Kante",
+    tagline: "Website-Konzept für ein Café mit Rösterei",
+    summary:
+      "Eine Seite mit allem, was Gäste suchen: Karte, Öffnungszeiten mit „Heute geöffnet bis …“, Stimmen und Anfahrt. Name und Inhalte sind fiktiv.",
+    href: "/konzepte/cafe/",
+    shots: {
+      desktop: "/work/kante/desktop.jpg",
+      phone: "/work/kante/handy.jpg",
+      alt: "Website-Konzept Kante: Startseite mit großer Überschrift und Farbflächen",
+    },
   },
 ];

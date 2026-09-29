@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg: #f5f2ec;
-  --color-surface: #ebe6dc;
-  --color-accent: #3d63f0;
-  --color-ink: #17171b;
-  --color-muted: #66656b;
-  --color-line: rgb(23 23 27 / 0.1);
-  --color-line-strong: rgb(23 23 27 / 0.22);
+  --color-bg: #0c0c0c;
+  --color-surface: #151515;
+  --color-accent: #648bff;
+  --color-lime: #c6f432;
+  --color-ink: #f2f2f2;
+  --color-muted: #8f8f8f;
+  --color-line: #242424;
+  --color-line-strong: #363636;
 
-  --font-display: var(--font-instrument), ui-serif, Georgia, serif;
   --font-brand: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -38,8 +39,8 @@
   }
 
   ::selection {
-    background: var(--color-accent);
-    color: #fff;
+    background: var(--color-lime);
+    color: var(--color-bg);
   }
 
   :focus-visible {
@@ -50,13 +51,14 @@
 }
 
 @utility display {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
 }
 
 @utility eyebrow {
-  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
   color: var(--color-muted);
 }

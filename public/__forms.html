@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Formular-Erkennung</title>
+  </head>
+  <body>
+    <!-- Netlify Forms reads this static copy at deploy time. The React form in
+         src/components/ContactForm.tsx posts to this file with the same fields. -->
+    <form name="kontakt" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="kontakt" />
+      <input name="bot-field" />
+      <input name="name" />
+      <input name="email" type="email" />
+      <textarea name="nachricht"></textarea>
+    </form>
+  </body>
+</html>

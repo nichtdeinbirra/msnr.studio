@@ -28,9 +28,7 @@ export function ButtonLink({ href, children, variant = "solid", external, classN
   const base =
     "group inline-flex items-center gap-3 rounded-full px-6 py-3.5 text-sm font-medium transition-colors duration-300";
   const styles =
-    variant === "solid"
-      ? "bg-ink text-bg hover:bg-accent hover:text-white"
-      : "border border-line-strong text-ink hover:border-ink";
+    variant === "solid" ? "bg-ink text-bg hover:bg-lime" : "border border-line-strong text-ink hover:border-ink";
   return (
     <a
       href={href}
@@ -47,11 +45,14 @@ export function ButtonLink({ href, children, variant = "solid", external, classN
   );
 }
 
-export function SectionHead({ title, id }: { title: React.ReactNode; id?: string }) {
+export function SectionHead({ eyebrow, title, id }: { eyebrow: string; title: React.ReactNode; id?: string }) {
   return (
-    <h2 id={id} className="display mb-10 text-[clamp(2.5rem,6vw,4.5rem)] md:mb-14">
-      {title}
-    </h2>
+    <div className="mb-10 md:mb-14">
+      <p className="eyebrow">{eyebrow}</p>
+      <h2 id={id} className="display mt-4 text-[clamp(2.25rem,4.5vw,3.5rem)]">
+        {title}
+      </h2>
+    </div>
   );
 }
 

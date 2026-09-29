@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 
 export const dynamic = "force-static";
 
-export const alt = `${site.name}. — ${site.positioning}`;
+export const alt = `${site.owner}: ${site.positioning}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -18,20 +18,19 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 72,
-          background: "#F5F2EC",
-          color: "#17171B",
+          background: "#0C0C0C",
+          color: "#F2F2F2",
         }}
       >
-        <div style={{ display: "flex", fontSize: 26, color: "#66656B", letterSpacing: 2,  }}>
-          {site.positioning}
+        <div style={{ display: "flex", fontSize: 44, fontWeight: 800, letterSpacing: -2 }}>
+          {site.name}
+          <span style={{ color: "#648BFF" }}>.</span>
         </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", fontSize: 150, fontWeight: 800, letterSpacing: -8, lineHeight: 1 }}>
-            {site.name}
-            <span style={{ color: "#3D63F0" }}>.</span>
-          </div>
-          <div style={{ display: "flex", marginTop: 24, fontSize: 40, color: "#66656B" }}>{site.hero.greeting}</div>
+        <div style={{ display: "flex", flexDirection: "column", fontSize: 72, lineHeight: 1.1, letterSpacing: -2 }}>
+          <span>{site.hero.headline.start}</span>
+          <span style={{ color: "#C6F432" }}>{site.hero.headline.highlight}</span>
         </div>
+        <div style={{ display: "flex", fontSize: 28, color: "#8F8F8F" }}>{site.owner} · Offenbach am Main</div>
       </div>
     ),
     size,

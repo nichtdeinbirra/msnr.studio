@@ -5,11 +5,11 @@ import { site } from "@/content/site";
 /** Shared layout for Impressum and Datenschutz. Both are in German. */
 export function LegalPage({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <Container className="pb-24 pt-32 md:pb-36 md:pt-44">
+    <Container className="pb-24 pt-28 md:pb-32 md:pt-36">
       <div lang="de" className="grid gap-12 border-t border-line pt-6 md:grid-cols-12 md:gap-6">
         <p className="eyebrow md:col-span-3">Rechtliches</p>
         <div className="md:col-span-7">
-          <h1 className="display text-[clamp(2.75rem,7vw,6rem)]">{title}</h1>
+          <h1 className="display text-[clamp(3rem,8vw,6.5rem)]">{title}</h1>
           {children}
           <Link href="/" className="mt-16 inline-block text-sm text-muted transition-colors hover:text-ink">
             ← Zurück zu {site.name}.
