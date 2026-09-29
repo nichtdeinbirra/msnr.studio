@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MEISSEL.
 
-## Getting Started
-
-First, run the development server:
+Portfolio and studio site of Kimmo Meissner. Next.js 16 (App Router), TypeScript, Tailwind CSS 4, Framer Motion.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All text lives in `src/content/`, not in the components.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| File | What |
+|---|---|
+| `site.ts` | Hero, About, Contact, socials, navigation, site URL |
+| `projects.ts` | Selected Work (`featured`) and the compact "Also built" list (`more`) |
+| `capabilities.ts` | Capability groups |
 
-## Learn More
+Values in `[brackets]` are placeholders. They render with a dashed outline until replaced.
 
-To learn more about Next.js, take a look at the following resources:
+### Adding a product
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Put screenshots in `public/work/<slug>/`.
+2. Add an entry to `featured` in `src/content/projects.ts` with `visual: { kind: "image", src: "/work/<slug>/cover.png", alt: "…", background: "#…" }`.
+3. Until real screenshots exist, use `{ kind: "placeholder", label: "…" }`. Do not mock up screens.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Projects alternate sides in the bento grid automatically.
 
-## Deploy on Vercel
+## Before launch
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `site.contact.email` is a placeholder (`hello@meissel.studio`).
+- Fill in the imprint on `/imprint` (address, VAT status) and the privacy text.
+- Set `NEXT_PUBLIC_SITE_URL` to the real domain for canonical URLs, sitemap and Open Graph.
+- Replace the OFFSTG. brand visual with product screenshots and add Brainer visuals.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Fonts (Bricolage Grotesque, Geist, Geist Mono) are loaded with `next/font` and served from the site's own domain, so no request goes to Google.

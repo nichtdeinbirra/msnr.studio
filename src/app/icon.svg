@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0A0B10"/>
+  <!-- M with its upper right corner cut off, like a chisel stroke -->
+  <path d="M12 48V16h8.5L32 32.5 43.5 16h2.5L52 22v26h-8.5V31.5L32 47.5 20.5 31.5V48Z" fill="#F8F9FF"/>
+  <circle cx="56.5" cy="44.5" r="3.5" fill="#648BFF"/>
+</svg>
