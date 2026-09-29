@@ -75,7 +75,11 @@ export default function DatenschutzPage() {
         </p>
         <p>
           Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der
-          Behörde deines Wohnorts oder der für mich zuständigen Landesbehörde.
+          Behörde deines Wohnorts. Für mich zuständig ist der{" "}
+          <a href="https://datenschutz.hessen.de" target="_blank" rel="noopener noreferrer">
+            Hessische Beauftragte für Datenschutz und Informationsfreiheit
+          </a>
+          .
         </p>
       </LegalSection>
 

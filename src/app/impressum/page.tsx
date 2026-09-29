@@ -16,7 +16,7 @@ const rows = [
   { label: "Anbieter", value: site.owner },
   { label: "Anschrift", value: [site.legal.street, site.legal.city] },
   { label: "E-Mail", value: site.contact.email, href: `mailto:${site.contact.email}` },
-  { label: "Telefon", value: site.legal.phone },
+  { label: "Telefon", value: site.legal.phone, href: `tel:${site.legal.phone.replace(/\s/g, "")}` },
   { label: "Umsatzsteuer", value: site.legal.vat },
 ];
 

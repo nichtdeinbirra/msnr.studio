@@ -31,7 +31,7 @@ export const site = {
     facts: [
       { label: "Studio", value: "Independent" },
       { label: "Focus", value: "Product design & full-stack development" },
-      { label: "Based in", value: "[City, Country]" },
+      { label: "Based in", value: "Offenbach am Main, Germany" },
       { label: "Languages", value: "[e.g. German, English]" },
     ],
   },
@@ -45,10 +45,10 @@ export const site = {
 
   /** Details for Impressum (§ 5 DDG) and Datenschutzerklärung. */
   legal: {
-    street: "[Straße und Hausnummer]",
-    city: "[PLZ Ort]",
-    phone: "[Telefon, optional]",
-    vat: "[Kleinunternehmer nach § 19 UStG, oder USt-IdNr.]",
+    street: "Bettinastraße 19",
+    city: "63067 Offenbach am Main",
+    phone: "+49 157 39468746",
+    vat: "Kleinunternehmer gemäß § 19 UStG, daher wird keine Umsatzsteuer ausgewiesen.",
   },
 
   socials: [{ label: "GitHub", href: "https://github.com/nichtdeinbirra" }],
