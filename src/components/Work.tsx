@@ -5,7 +5,8 @@ import { ArrowUpRight, Container, SectionHead } from "./ui";
 
 export function Work() {
   const p = featured;
-  const [wide, ...phones] = p.shots;
+  const wide = p.shots.filter((s) => s.device === "wide");
+  const panels = p.shots.filter((s) => s.device === "panel");
 
   return (
     <section id="work" aria-labelledby="work-title" className="py-20 md:py-32">
@@ -40,19 +41,19 @@ export function Work() {
           </div>
 
           <div className="mt-10 grid gap-4 md:mt-14 md:gap-6">
-            {wide && (
-              <Reveal as="div">
+            {wide.map((s) => (
+              <Reveal key={s.src}>
                 <figure>
-                  <Shot src={wide.src} alt={wide.alt} className="aspect-[16/10] w-full rounded-2xl bg-bg" />
-                  <figcaption className="eyebrow mt-3">{wide.caption}</figcaption>
+                  <Shot src={s.src} alt={s.alt} className="aspect-[3/2] w-full rounded-2xl bg-[#0d0e0c]" />
+                  <figcaption className="eyebrow mt-3">{s.caption}</figcaption>
                 </figure>
               </Reveal>
-            )}
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-              {phones.map((s, i) => (
-                <Reveal key={s.src} delay={i * 0.06} className={i === 2 ? "col-span-2 mx-auto w-1/2 md:col-span-1 md:mx-0 md:w-full" : ""}>
+            ))}
+            <div className="grid items-start gap-4 sm:grid-cols-2 md:gap-6">
+              {panels.map((s, i) => (
+                <Reveal key={s.src} delay={i * 0.06}>
                   <figure>
-                    <Shot src={s.src} alt={s.alt} className="aspect-[9/19] w-full rounded-[1.75rem] bg-bg" />
+                    <Shot src={s.src} alt={s.alt} className="w-full rounded-2xl bg-[#0d0e0c]" placeholderClassName="aspect-square" />
                     <figcaption className="eyebrow mt-3">{s.caption}</figcaption>
                   </figure>
                 </Reveal>

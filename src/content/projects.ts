@@ -12,8 +12,8 @@ export type Shot = {
   alt: string;
   /** Short caption under the image. */
   caption: string;
-  /** "desktop" is shown wide, "phone" in a narrow portrait frame. */
-  device: "desktop" | "phone";
+  /** "wide" spans the full width, "panel" shots sit side by side. */
+  device: "wide" | "panel";
 };
 
 export type Project = {
@@ -37,27 +37,21 @@ export const featured: Project = {
   shots: [
     {
       src: "/work/offstg/dashboard.png",
-      alt: "OFFSTG. dashboard with upcoming events",
-      caption: "Dashboard",
-      device: "desktop",
+      alt: "OFFSTG. dashboard with ticket numbers, upcoming events and budget",
+      caption: "Dashboard · example data",
+      device: "wide",
     },
     {
-      src: "/work/offstg/checkin.png",
-      alt: "OFFSTG. QR check-in on a phone",
-      caption: "Check-in at the door",
-      device: "phone",
+      src: "/work/offstg/overview.png",
+      alt: "OFFSTG. compact overview with KPIs and upcoming events",
+      caption: "Overview · example data",
+      device: "panel",
     },
     {
-      src: "/work/offstg/shop.png",
-      alt: "OFFSTG. ticket shop on a phone",
-      caption: "Ticket shop",
-      device: "phone",
-    },
-    {
-      src: "/work/offstg/numbers.png",
-      alt: "OFFSTG. profit and margin after an event",
-      caption: "Numbers after the night",
-      device: "phone",
+      src: "/work/offstg/eventday.png",
+      alt: "OFFSTG. event-day mode with guest count, timetable and ticket scanner",
+      caption: "Event-day mode at the door · example data",
+      device: "panel",
     },
   ],
 };
