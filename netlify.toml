@@ -5,8 +5,3 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# The Open Graph image is exported without a file extension.
-[[headers]]
-  for = "/opengraph-image"
-  [headers.values]
-    Content-Type = "image/png"
