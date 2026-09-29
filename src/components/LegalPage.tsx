@@ -23,7 +23,7 @@ export function LegalPage({ title, children }: { title: string; children: React.
 export function LegalSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section>
-      <h2 className="mt-16 font-display text-2xl font-semibold tracking-tight">{title}</h2>
+      <h2 className="mt-14 text-xl font-medium">{title}</h2>
       <div className="mt-6 space-y-4 leading-relaxed text-muted [&_a]:text-ink [&_a]:underline [&_a]:underline-offset-4">
         {children}
       </div>

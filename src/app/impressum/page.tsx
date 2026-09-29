@@ -27,7 +27,7 @@ export default function ImpressumPage() {
         <dl className="divide-y divide-line border-y border-line text-ink">
           {rows.map((row) => (
             <div key={row.label} className="grid gap-1 py-4 sm:grid-cols-3">
-              <dt className="eyebrow pt-0.5">{row.label}</dt>
+              <dt className="text-muted">{row.label}</dt>
               <dd className="sm:col-span-2">
                 {Array.isArray(row.value) ? (
                   row.value.map((line) => (

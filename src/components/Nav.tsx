@@ -61,7 +61,7 @@ export function Nav() {
       >
         <nav
           aria-label="Main"
-          className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:h-20 md:px-10"
+          className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5 md:h-20 md:px-10"
         >
           <Link href="/" aria-label={`${site.name}. home`} className="text-xl md:text-2xl">
             <Wordmark />

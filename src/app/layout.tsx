@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Geist, Instrument_Serif } from "next/font/google";
 import { MotionProvider } from "@/components/MotionProvider";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -11,7 +11,15 @@ import "./globals.css";
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
   subsets: ["latin"],
-  weight: ["600", "800"],
+  weight: ["800"],
+  display: "swap",
+});
+
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -21,14 +29,8 @@ const geist = Geist({
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const title = `${site.name}. — ${site.positioning}`;
-const description = `${site.hero.intro} Studio of ${site.owner}.`;
+const title = `${site.owner} — ${site.name}.`;
+const description = site.hero.intro;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -49,15 +51,15 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0b10",
-  colorScheme: "dark",
+  themeColor: "#f5f2ec",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${bricolage.variable} ${geist.variable} ${geistMono.variable}`}
+      className={`${bricolage.variable} ${instrument.variable} ${geist.variable}`}
     >
       <body className="min-h-dvh bg-bg text-ink">
         <a
