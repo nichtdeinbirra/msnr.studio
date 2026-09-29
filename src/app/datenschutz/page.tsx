@@ -30,7 +30,8 @@ export default function DatenschutzPage() {
           Diese Website setzt keine Cookies, nutzt kein Tracking und keine Analyse-Tools und bindet keine
           Inhalte von Drittanbietern ein. Die Schriften werden von dieser Domain ausgeliefert, beim Aufruf
           wird also keine Verbindung zu Google oder anderen Font-Anbietern aufgebaut. Personenbezogene Daten
-          fallen nur beim Hosting (Server-Logs) und an, wenn du mir eine E-Mail schreibst.
+          fallen nur beim Hosting (Server-Logs) an und wenn du mir über das Kontaktformular oder per E-Mail
+          schreibst.
         </p>
       </LegalSection>
 
@@ -57,12 +58,17 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="Kontakt per E-Mail">
+      <LegalSection title="Kontaktformular und E-Mail">
         <p>
-          Wenn du mir schreibst, verarbeite ich deine E-Mail-Adresse und den Inhalt der Nachricht, um deine
-          Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn es um einen Auftrag
+          Wenn du mir über das Kontaktformular oder per E-Mail schreibst, verarbeite ich deinen Namen, deine
+          E-Mail-Adresse und den Inhalt der Nachricht, um deine Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn es um einen Auftrag
           oder ein mögliches Projekt geht, sonst Art. 6 Abs. 1 lit. f DSGVO. Ich lösche die Nachrichten, wenn
           sie nicht mehr gebraucht werden und keine gesetzlichen Aufbewahrungsfristen entgegenstehen.
+        </p>
+        <p>
+          Die Eingaben im Kontaktformular werden über Netlify Forms übermittelt und bei Netlify gespeichert,
+          bis ich sie lösche. Für Netlify gelten die Angaben im Abschnitt „Hosting und Server-Logs“, also
+          der Vertrag zur Auftragsverarbeitung und das EU-U.S. Data Privacy Framework.
         </p>
       </LegalSection>
 
