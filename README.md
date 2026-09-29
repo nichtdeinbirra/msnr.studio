@@ -1,6 +1,8 @@
-# MEISSEL.
+# msnr.studio
 
 Portfolio and studio site of Kimmo Meissner. Next.js 16 (App Router), TypeScript, Tailwind CSS 4, Framer Motion.
+
+Deployed on Netlify as a static export (`out/`, see `netlify.toml`).
 
 ```bash
 npm install
@@ -31,9 +33,8 @@ Projects alternate sides in the bento grid automatically.
 
 ## Before launch
 
-- `site.contact.email` is a placeholder (`hello@meissel.studio`).
+- `site.contact.email` (`hello@msnr.studio`) needs a mailbox or forwarding on the domain.
 - Fill in the imprint on `/imprint` (address, VAT status) and the privacy text.
-- Set `NEXT_PUBLIC_SITE_URL` to the real domain for canonical URLs, sitemap and Open Graph.
 - Replace the OFFSTG. brand visual with product screenshots and add Brainer visuals.
 
 Fonts (Bricolage Grotesque, Geist, Geist Mono) are loaded with `next/font` and served from the site's own domain, so no request goes to Google.

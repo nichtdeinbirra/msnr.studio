@@ -7,10 +7,11 @@
  */
 
 export const site = {
-  name: "MEISSEL",
+  name: "MSNR",
+  domain: "msnr.studio",
   positioning: "Independent Digital Studio",
   owner: "Kimmo Meissner",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://meissel.studio",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://msnr.studio",
 
   hero: {
     headline: "Ideas shaped into digital experiences.",
@@ -23,7 +24,7 @@ export const site = {
     statement:
       "I design and build software on my own, from the first screen to the database behind it.",
     paragraphs: [
-      "I'm Kimmo Meissner. MEISSEL. is my independent studio. I work on both sides of a product: how it looks and feels, and the code, data model and deployment that make it run.",
+      "I'm Kimmo Meissner. msnr.studio is my independent studio. I work on both sides of a product: how it looks and feels, and the code, data model and deployment that make it run.",
       "Most of what I build starts as a tool I need myself or one I build for people I work with. OFFSTG. is built for club teams who would otherwise plan events across spreadsheets, chats and paper. Brainer keeps my own projects organised.",
       "[Add a line about your background, e.g. how you got into development.]",
     ],
@@ -38,8 +39,8 @@ export const site = {
   contact: {
     headline: "Have an idea worth shaping?",
     text: "Tell me what you want to build, and what it should feel like.",
-    /** Placeholder until the domain and mailbox exist. */
-    email: "hello@meissel.studio",
+    /** Needs a mailbox (or forwarding) on the domain before launch. */
+    email: "hello@msnr.studio",
   },
 
   socials: [{ label: "GitHub", href: "https://github.com/nichtdeinbirra" }],
