@@ -18,19 +18,19 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 72,
-          background: "#0A0B10",
-          color: "#F8F9FF",
+          background: "#F5F2EC",
+          color: "#17171B",
         }}
       >
-        <div style={{ display: "flex", fontSize: 26, color: "#989EB2", letterSpacing: 2, textTransform: "uppercase" }}>
+        <div style={{ display: "flex", fontSize: 26, color: "#66656B", letterSpacing: 2,  }}>
           {site.positioning}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", fontSize: 150, fontWeight: 800, letterSpacing: -8, lineHeight: 1 }}>
             {site.name}
-            <span style={{ color: "#648BFF" }}>.</span>
+            <span style={{ color: "#3D63F0" }}>.</span>
           </div>
-          <div style={{ display: "flex", marginTop: 24, fontSize: 40, color: "#989EB2" }}>{site.hero.headline}</div>
+          <div style={{ display: "flex", marginTop: 24, fontSize: 40, color: "#66656B" }}>{site.hero.greeting}</div>
         </div>
       </div>
     ),

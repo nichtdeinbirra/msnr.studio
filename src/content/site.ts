@@ -9,38 +9,43 @@
 export const site = {
   name: "MSNR",
   domain: "msnr.studio",
-  positioning: "Independent Digital Studio",
+  positioning: "Kimmo Meissner builds apps with AI",
   owner: "Kimmo Meissner",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://msnr.studio",
 
   hero: {
-    headline: "Ideas shaped into digital experiences.",
+    greeting: "Hi, I'm Kimmo.",
     intro:
-      "Independent design & development. Building digital products with a distinct identity.",
-    cta: { label: "Explore My Work", href: "#work" },
+      "I build apps for problems I actually run into. I'm not a trained developer. I vibecode: I bring the idea and the taste, AI writes the code.",
+    /** Photo of Kimmo. Drop the file at public/me.jpg. */
+    photo: { src: "/me.jpg", alt: "Kimmo Meissner" },
   },
 
   about: {
-    statement:
-      "I design and build software on my own, from the first screen to the database behind it.",
-    paragraphs: [
-      "I'm Kimmo Meissner. msnr.studio is my independent studio. I work on both sides of a product: how it looks and feels, and the code, data model and deployment that make it run.",
-      "Most of what I build starts as a tool I need myself or one I build for people I work with. OFFSTG. is built for club teams who would otherwise plan events across spreadsheets, chats and paper. Brainer keeps my own projects organised.",
-      "[Add a line about your background, e.g. how you got into development.]",
+    title: "How I work",
+    steps: [
+      { title: "Idea", text: "I start with a problem I know first-hand, not a feature list." },
+      { title: "Build with AI", text: "I describe what I want in Claude Code, then review and test every step." },
+      { title: "Ship", text: "It goes live, real people use it, and I keep improving it." },
     ],
     facts: [
-      { label: "Studio", value: "Independent" },
-      { label: "Focus", value: "Product design & full-stack development" },
-      { label: "Based in", value: "[City, Country]" },
-      { label: "Languages", value: "[e.g. German, English]" },
+      { label: "Based in", value: "Offenbach am Main" },
+      { label: "Tools", value: "Claude Code, Next.js, Supabase, Vercel" },
     ],
   },
 
   contact: {
-    headline: "Have an idea worth shaping?",
-    text: "Tell me what you want to build, and what it should feel like.",
-    /** Needs a mailbox (or forwarding) on the domain before launch. */
+    headline: "Got an idea? Let's talk.",
+    text: "Write me a few lines about what you'd like to build.",
     email: "hello@msnr.studio",
+  },
+
+  /** Details for Impressum (§ 5 DDG) and Datenschutzerklärung. */
+  legal: {
+    street: "Bettinastraße 19",
+    city: "63067 Offenbach am Main",
+    phone: "+49 157 39468746",
+    vat: "Kleinunternehmer gemäß § 19 UStG, daher wird keine Umsatzsteuer ausgewiesen.",
   },
 
   socials: [{ label: "GitHub", href: "https://github.com/nichtdeinbirra" }],

@@ -29,7 +29,7 @@ export function ButtonLink({ href, children, variant = "solid", external, classN
     "group inline-flex items-center gap-3 rounded-full px-6 py-3.5 text-sm font-medium transition-colors duration-300";
   const styles =
     variant === "solid"
-      ? "bg-ink text-bg hover:bg-accent"
+      ? "bg-ink text-bg hover:bg-accent hover:text-white"
       : "border border-line-strong text-ink hover:border-ink";
   return (
     <a
@@ -47,25 +47,11 @@ export function ButtonLink({ href, children, variant = "solid", external, classN
   );
 }
 
-export function SectionHead({
-  eyebrow,
-  title,
-  aside,
-  id,
-}: {
-  eyebrow: string;
-  title: React.ReactNode;
-  aside?: React.ReactNode;
-  id?: string;
-}) {
+export function SectionHead({ title, id }: { title: React.ReactNode; id?: string }) {
   return (
-    <div className="mb-12 grid gap-6 border-t border-line pt-6 md:mb-16 md:grid-cols-12">
-      <p className="eyebrow md:col-span-3">{eyebrow}</p>
-      <h2 id={id} className="display text-[clamp(2.5rem,6vw,5.5rem)] md:col-span-7">
-        {title}
-      </h2>
-      {aside && <div className="text-sm text-muted md:col-span-2 md:text-right">{aside}</div>}
-    </div>
+    <h2 id={id} className="display mb-10 text-[clamp(2.5rem,6vw,4.5rem)] md:mb-14">
+      {title}
+    </h2>
   );
 }
 
@@ -80,5 +66,5 @@ export function Editable({ value }: { value: string }) {
 }
 
 export function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`mx-auto max-w-[1440px] px-5 md:px-10 ${className}`}>{children}</div>;
+  return <div className={`mx-auto max-w-[1200px] px-5 md:px-10 ${className}`}>{children}</div>;
 }
