@@ -21,8 +21,13 @@ export function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/imprint" className="transition-colors hover:text-ink">
-                Imprint & Privacy
+              <Link href="/impressum" className="transition-colors hover:text-ink">
+                Impressum
+              </Link>
+            </li>
+            <li>
+              <Link href="/datenschutz" className="transition-colors hover:text-ink">
+                Datenschutz
               </Link>
             </li>
           </ul>

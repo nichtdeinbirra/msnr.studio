@@ -43,6 +43,14 @@ export const site = {
     email: "hello@msnr.studio",
   },
 
+  /** Details for Impressum (§ 5 DDG) and Datenschutzerklärung. */
+  legal: {
+    street: "[Straße und Hausnummer]",
+    city: "[PLZ Ort]",
+    phone: "[Telefon, optional]",
+    vat: "[Kleinunternehmer nach § 19 UStG, oder USt-IdNr.]",
+  },
+
   socials: [{ label: "GitHub", href: "https://github.com/nichtdeinbirra" }],
 
   nav: [
