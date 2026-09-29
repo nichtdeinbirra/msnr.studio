@@ -31,7 +31,7 @@ export function Hero() {
           className="flex items-center justify-between border-b border-line pb-5"
         >
           <p className="eyebrow">{site.positioning}</p>
-          <p className="eyebrow hidden sm:block">Design & Development</p>
+          <p className="eyebrow hidden sm:block">Design & Vibecoding</p>
         </m.div>
 
         <div className="relative grid flex-1 items-center gap-10 py-12 lg:grid-cols-12 lg:py-16">

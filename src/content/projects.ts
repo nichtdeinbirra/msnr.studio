@@ -51,7 +51,7 @@ export const featured: Project[] = [
     category: "Event operations platform",
     year: "2026",
     status: "Live · in active development",
-    role: "Product design & full-stack development",
+    role: "Idea & product design, built with AI",
     summary:
       "Plans events, counts guests at the door and settles the numbers after the night. Built for club teams who would otherwise juggle spreadsheets, chats and paper, on phone and desktop.",
     highlights: [
@@ -71,23 +71,6 @@ export const featured: Project[] = [
       accent: "#A3F70F",
       note: "Brand visual · product screenshots to be added",
     },
-  },
-  {
-    slug: "brainer",
-    name: "Brainer",
-    category: "Personal workspace & second brain",
-    year: "2026",
-    status: "Personal tool",
-    role: "Concept, structure & tooling",
-    summary:
-      "An Obsidian vault that holds the current state of every project. Each coding session starts by reading the project's handoff note and ends by updating it, so work picks up exactly where it stopped.",
-    highlights: [
-      "Handoff and status notes per project",
-      "Written workflows, such as the session handoff",
-      "Activity log and a dashboard built by a Python script",
-    ],
-    stack: ["Obsidian", "Markdown", "Python", "Claude Code"],
-    visual: { kind: "placeholder", label: "Brainer · visuals to be added" },
   },
 ];
 

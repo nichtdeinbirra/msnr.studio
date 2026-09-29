@@ -16,23 +16,23 @@ export const site = {
   hero: {
     headline: "Ideas shaped into digital experiences.",
     intro:
-      "Independent design & development. Building digital products with a distinct identity.",
+      "I'm a vibecoder: I bring the idea, the design and the decisions, AI writes most of the code. Together we ship real products.",
     cta: { label: "Explore My Work", href: "#work" },
   },
 
   about: {
     statement:
-      "I design and build software on my own, from the first screen to the database behind it.",
+      "I'm not a trained developer. I build software with AI, and I take it all the way to live.",
     paragraphs: [
-      "I'm Kimmo Meissner. msnr.studio is my independent studio. I work on both sides of a product: how it looks and feels, and the code, data model and deployment that make it run.",
-      "Most of what I build starts as a tool I need myself or one I build for people I work with. OFFSTG. is built for club teams who would otherwise plan events across spreadsheets, chats and paper. Brainer keeps my own projects organised.",
-      "[Add a line about your background, e.g. how you got into development.]",
+      "I'm Kimmo Meissner. msnr.studio is my independent studio. I don't write code by hand. I work with AI tools like Claude Code: I describe what the product should do and how it should feel, review what comes back, test it and decide what ships.",
+      "That's called vibecoding. It lets me take an idea from a first sketch to a live app with login, database and payments, without a dev team.",
+      "Most of what I build starts with a real problem, mine or that of people I work with. OFFSTG. is built for club teams who would otherwise plan events across spreadsheets, chats and paper.",
     ],
     facts: [
       { label: "Studio", value: "Independent" },
-      { label: "Focus", value: "Product design & full-stack development" },
+      { label: "Focus", value: "Product design & vibecoding" },
       { label: "Based in", value: "Offenbach am Main, Germany" },
-      { label: "Languages", value: "[e.g. German, English]" },
+      { label: "Built with", value: "Claude Code & AI tools" },
     ],
   },
 

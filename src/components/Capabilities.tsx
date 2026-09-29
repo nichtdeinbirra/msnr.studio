@@ -8,10 +8,10 @@ export function Capabilities() {
       <Container>
         <SectionHead
           id="capabilities-title"
-          eyebrow="Capabilities"
+          eyebrow="What I've shipped"
           title={
             <>
-              From interface <span className="text-muted">to infrastructure.</span>
+              From interface <span className="text-muted">to infrastructure, built with AI.</span>
             </>
           }
         />

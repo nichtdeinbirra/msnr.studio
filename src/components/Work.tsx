@@ -12,7 +12,7 @@ export function Work() {
           eyebrow="Selected Work"
           title={
             <>
-              Products I design <span className="text-muted">and build myself.</span>
+              Products I design <span className="text-muted">and ship with AI.</span>
             </>
           }
           aside={<span className="font-mono">({String(featured.length).padStart(2, "0")})</span>}
