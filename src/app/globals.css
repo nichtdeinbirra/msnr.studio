@@ -1,17 +1,20 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg: #f5f2ec;
-  --color-surface: #ebe6dc;
+  --color-bg: #f1ede4;
+  --color-surface: #e6e0d3;
   --color-accent: #3d63f0;
-  --color-ink: #17171b;
-  --color-muted: #66656b;
-  --color-line: rgb(23 23 27 / 0.1);
-  --color-line-strong: rgb(23 23 27 / 0.22);
+  --color-lime: #c6f432;
+  --color-pink: #ff5fa2;
+  --color-ink: #111111;
+  --color-muted: #5c5a57;
+  --color-line: rgb(17 17 17 / 0.14);
+  --color-line-strong: rgb(17 17 17 / 0.3);
 
-  --font-display: var(--font-instrument), ui-serif, Georgia, serif;
+  --font-display: var(--font-anton), Impact, "Arial Narrow", sans-serif;
   --font-brand: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -52,11 +55,51 @@
 @utility display {
   font-family: var(--font-display);
   font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  line-height: 0.9;
 }
 
 @utility eyebrow {
-  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--color-muted);
+}
+
+/* Printed-paper grain: a fine dot screen, like a riso print. */
+@utility grain {
+  background-image: radial-gradient(rgb(17 17 17 / 0.07) 1px, transparent 1.2px);
+  background-size: 5px 5px;
+}
+
+/* Rounded sticker with a thin border and a hard offset shadow. */
+@utility sticker {
+  display: inline-block;
+  border: 2px solid var(--color-ink);
+  border-radius: 9999px;
+  padding: 0.35rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 var(--color-ink);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 28s linear infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }

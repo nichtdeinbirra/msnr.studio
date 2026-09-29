@@ -26,11 +26,11 @@ type ButtonProps = {
 
 export function ButtonLink({ href, children, variant = "solid", external, className = "" }: ButtonProps) {
   const base =
-    "group inline-flex items-center gap-3 rounded-full px-6 py-3.5 text-sm font-medium transition-colors duration-300";
+    "group inline-flex items-center gap-3 rounded-full border-2 border-ink px-6 py-3 text-sm font-medium transition-[transform,box-shadow] duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5";
   const styles =
     variant === "solid"
-      ? "bg-ink text-bg hover:bg-accent hover:text-white"
-      : "border border-line-strong text-ink hover:border-ink";
+      ? "bg-ink text-bg shadow-[3px_3px_0_var(--color-pink)] hover:shadow-[5px_5px_0_var(--color-pink)]"
+      : "bg-transparent text-ink hover:shadow-[3px_3px_0_var(--color-ink)]";
   return (
     <a
       href={href}

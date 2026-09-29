@@ -10,16 +10,8 @@ import { Wordmark } from "./Wordmark";
 export function Nav() {
   const pathname = usePathname();
   const onHome = pathname === "/";
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Highlight the section currently in view.
   useEffect(() => {
@@ -56,14 +48,14 @@ export function Nav() {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
-          scrolled || open ? "border-b border-line bg-bg/75 backdrop-blur-xl" : "border-b border-transparent"
+          "border-b-2 border-ink bg-bg"
         }`}
       >
         <nav
-          aria-label="Main"
+          aria-label="Hauptmenü"
           className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5 md:h-20 md:px-10"
         >
-          <Link href="/" aria-label={`${site.name}. home`} className="text-xl md:text-2xl">
+          <Link href="/" aria-label={`${site.name}. Startseite`} className="text-xl md:text-2xl">
             <Wordmark />
           </Link>
 
@@ -87,7 +79,7 @@ export function Nav() {
             className="relative -mr-2 grid size-10 place-items-center md:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? "Menü schließen" : "Menü öffnen"}
             onClick={() => setOpen((v) => !v)}
           >
             <span

@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 
 export const dynamic = "force-static";
 
-export const alt = `${site.name}. — ${site.positioning}`;
+export const alt = `${site.owner}: ${site.positioning}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -17,21 +17,25 @@ export default async function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: 72,
-          background: "#F5F2EC",
-          color: "#17171B",
+          padding: 64,
+          background: "#F1EDE4",
+          color: "#111111",
         }}
       >
-        <div style={{ display: "flex", fontSize: 26, color: "#66656B", letterSpacing: 2,  }}>
-          {site.positioning}
+        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26, borderBottom: "4px solid #111", paddingBottom: 16 }}>
+          <span>{site.name}. präsentiert</span>
+          <span>Offenbach am Main</span>
         </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", fontSize: 150, fontWeight: 800, letterSpacing: -8, lineHeight: 1 }}>
-            {site.name}
-            <span style={{ color: "#3D63F0" }}>.</span>
-          </div>
-          <div style={{ display: "flex", marginTop: 24, fontSize: 40, color: "#66656B" }}>{site.hero.greeting}</div>
+        <div style={{ display: "flex", flexDirection: "column", fontSize: 104, fontWeight: 800, lineHeight: 1, letterSpacing: -4 }}>
+          {site.hero.lines.map((line) => (
+            <div key={line.text} style={{ display: "flex" }}>
+              <span style={"highlight" in line ? { background: "#C6F432", padding: "0 12px", margin: "0 -12px" } : {}}>
+                {line.text.toUpperCase()}
+              </span>
+            </div>
+          ))}
         </div>
+        <div style={{ display: "flex", fontSize: 30, color: "#5C5A57" }}>{site.positioning}</div>
       </div>
     ),
     size,

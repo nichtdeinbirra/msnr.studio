@@ -9,34 +9,55 @@
 export const site = {
   name: "MSNR",
   domain: "msnr.studio",
-  positioning: "Kimmo Meissner builds apps with AI",
+  positioning: "Apps und Websites für Clubs, Events und Nightlife",
   owner: "Kimmo Meissner",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://msnr.studio",
 
+  /** Running text at the top of the page. */
+  marquee: ["Bald am Start: OFFSTG.", "Apps für Clubs & Events", "Made in Offenbach", "Jetzt Projekt anfragen"],
+
   hero: {
-    greeting: "Hi, I'm Kimmo.",
+    /** Headline lines; the line marked `highlight` gets the lime marker. */
+    lines: [
+      { text: "Kimmo baut" },
+      { text: "Apps für", highlight: true },
+      { text: "Nächte," },
+      { text: "die laufen." },
+    ],
     intro:
-      "I build apps for problems I actually run into. I'm not a trained developer. I vibecode: I bring the idea and the taste, AI writes the code.",
-    /** Photo of Kimmo. Drop the file at public/me.jpg. */
+      "Ich baue Web-Apps und Websites für Clubs, Veranstalter und Events. Von der ersten Idee bis live, und du sprichst die ganze Zeit direkt mit mir.",
+    stickers: ["Made in Offenbach", "Ohne Agentur", "Direkt mit mir"],
+    /** Flyer-style details under the headline. */
+    details: [
+      { label: "Was", value: "Web-Apps & Websites" },
+      { label: "Für", value: "Clubs, Events, Nightlife" },
+      { label: "Wo", value: "Offenbach am Main" },
+    ],
+    /** Photo of Kimmo. Drop the file at public/me.jpg and it appears. */
     photo: { src: "/me.jpg", alt: "Kimmo Meissner" },
   },
 
-  about: {
-    title: "How I work",
+  process: {
+    title: "So läuft's",
     steps: [
-      { title: "Idea", text: "I start with a problem I know first-hand, not a feature list." },
-      { title: "Build with AI", text: "I describe what I want in Claude Code, then review and test every step." },
-      { title: "Ship", text: "It goes live, real people use it, and I keep improving it." },
-    ],
-    facts: [
-      { label: "Based in", value: "Offenbach am Main" },
-      { label: "Tools", value: "Claude Code, Next.js, Supabase, Vercel" },
+      {
+        title: "Wir reden",
+        text: "Du erzählst mir, was nervt oder fehlt. Ich frage nach, bis ich deinen Ablauf verstanden habe.",
+      },
+      {
+        title: "Ich baue",
+        text: "Ich arbeite mit AI-Tools wie Claude Code. Dadurch bin ich schneller und günstiger. Jeden Schritt teste ich selbst.",
+      },
+      {
+        title: "Es geht live",
+        text: "Du bekommst eine App, die läuft, und mich als festen Ansprechpartner, wenn etwas dazukommen soll.",
+      },
     ],
   },
 
   contact: {
-    headline: "Got an idea? Let's talk.",
-    text: "Write me a few lines about what you'd like to build.",
+    headline: "Lust auf ein Projekt?",
+    text: "Schreib mir ein paar Zeilen, was du vorhast.",
     email: "hello@msnr.studio",
   },
 
@@ -51,9 +72,9 @@ export const site = {
   socials: [{ label: "GitHub", href: "https://github.com/nichtdeinbirra" }],
 
   nav: [
-    { label: "Work", href: "#work" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Arbeiten", href: "#work" },
+    { label: "So läuft's", href: "#process" },
+    { label: "Kontakt", href: "#contact" },
   ],
 } as const;
 

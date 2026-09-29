@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Geist, Instrument_Serif } from "next/font/google";
+import { Anton, Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { MotionProvider } from "@/components/MotionProvider";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -15,16 +15,21 @@ const bricolage = Bricolage_Grotesque({
   display: "swap",
 });
 
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
-  subsets: ["latin"],
+const anton = Anton({
+  variable: "--font-anton",
+  subsets: ["latin", "latin-ext"],
   weight: "400",
-  style: ["normal", "italic"],
   display: "swap",
 });
 
 const geist = Geist({
   variable: "--font-geist",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -42,6 +47,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
+    locale: "de_DE",
     url: "/",
     siteName: `${site.name}.`,
     title,
@@ -51,22 +57,22 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f5f2ec",
+  themeColor: "#f1ede4",
   colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
-      className={`${bricolage.variable} ${instrument.variable} ${geist.variable}`}
+      lang="de"
+      className={`${bricolage.variable} ${anton.variable} ${geist.variable} ${geistMono.variable}`}
     >
       <body className="min-h-dvh bg-bg text-ink">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-bg"
         >
-          Skip to content
+          Zum Inhalt springen
         </a>
         <MotionProvider>
           <Nav />
