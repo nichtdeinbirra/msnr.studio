@@ -1,7 +1,7 @@
-import { featured, more } from "@/content/projects";
+import { concepts, featured, more } from "@/content/projects";
 import { Reveal } from "./Reveal";
 import { Shot } from "./Shot";
-import { Container, SectionHead } from "./ui";
+import { ArrowUpRight, Container, SectionHead } from "./ui";
 
 export function Work() {
   const p = featured;
@@ -54,6 +54,43 @@ export function Work() {
             ))}
           </div>
         </article>
+
+        {concepts.length > 0 && (
+          <div className="mt-14">
+            <p className="eyebrow mb-4">Konzepte</p>
+            <div className="grid gap-4 md:gap-5">
+              {concepts.map((c) => (
+                <Reveal key={c.slug}>
+                  <a
+                    href={c.href}
+                    target="_blank"
+                    rel="noopener"
+                    className="group grid gap-6 rounded-[2rem] border border-line bg-surface p-5 transition-colors hover:border-line-strong md:grid-cols-12 md:items-center md:p-8"
+                  >
+                    <div className="md:col-span-5">
+                      <span className="rounded-full border border-line-strong px-3 py-1 font-mono text-xs text-muted">Konzept</span>
+                      <h3 className="mt-4 text-3xl font-medium tracking-tight">{c.name}</h3>
+                      <p className="mt-1 text-muted">{c.tagline}</p>
+                      <p className="mt-5 leading-relaxed">{c.summary}</p>
+                      <span className="mt-6 inline-flex items-center gap-2 font-medium text-lime">
+                        Konzept ansehen
+                        <ArrowUpRight className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      </span>
+                    </div>
+                    <div className="relative md:col-span-7">
+                      <Shot src={c.shots.desktop} alt={c.shots.alt} className="w-full rounded-2xl border border-line" />
+                      <Shot
+                        src={c.shots.phone}
+                        alt=""
+                        className="absolute -bottom-3 right-4 w-[24%] rounded-xl border border-line-strong shadow-[0_24px_48px_-16px_rgb(0_0_0/0.9)]"
+                      />
+                    </div>
+                  </a>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        )}
 
         {more.length > 0 && (
           <div className="mt-14">

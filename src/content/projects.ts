@@ -69,3 +69,27 @@ export const more: { slug: string; name: string; summary: string }[] = [
     summary: "Kampagnen, Content-Kalender und Instagram-Posts für das Marketing-Team des Clubs.",
   },
 ];
+
+/** Self-initiated concepts. Fictional names and content, no real client shown. */
+export const concepts: {
+  slug: string;
+  name: string;
+  tagline: string;
+  summary: string;
+  href: string;
+  shots: { desktop: string; phone: string; alt: string };
+}[] = [
+  {
+    slug: "kante",
+    name: "Kante",
+    tagline: "Website-Konzept für ein Café mit Rösterei",
+    summary:
+      "Eine Seite mit allem, was Gäste suchen: Karte, Öffnungszeiten mit „Heute geöffnet bis …“, Stimmen und Anfahrt. Name und Inhalte sind fiktiv.",
+    href: "/konzepte/cafe/",
+    shots: {
+      desktop: "/work/kante/desktop.jpg",
+      phone: "/work/kante/handy.jpg",
+      alt: "Website-Konzept Kante: Startseite mit großer Überschrift und Farbflächen",
+    },
+  },
+];
