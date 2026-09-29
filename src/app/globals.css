@@ -1,17 +1,15 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg: #f1ede4;
-  --color-surface: #e6e0d3;
-  --color-accent: #3d63f0;
+  --color-bg: #0c0c0c;
+  --color-surface: #151515;
+  --color-accent: #648bff;
   --color-lime: #c6f432;
-  --color-pink: #ff5fa2;
-  --color-ink: #111111;
-  --color-muted: #5c5a57;
-  --color-line: rgb(17 17 17 / 0.14);
-  --color-line-strong: rgb(17 17 17 / 0.3);
+  --color-ink: #f2f2f2;
+  --color-muted: #8f8f8f;
+  --color-line: #242424;
+  --color-line-strong: #363636;
 
-  --font-display: var(--font-anton), Impact, "Arial Narrow", sans-serif;
   --font-brand: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -41,8 +39,8 @@
   }
 
   ::selection {
-    background: var(--color-accent);
-    color: #fff;
+    background: var(--color-lime);
+    color: var(--color-bg);
   }
 
   :focus-visible {
@@ -53,53 +51,14 @@
 }
 
 @utility display {
-  font-family: var(--font-display);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: -0.005em;
-  line-height: 0.9;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
 }
 
 @utility eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
   color: var(--color-muted);
-}
-
-/* Printed-paper grain: a fine dot screen, like a riso print. */
-@utility grain {
-  background-image: radial-gradient(rgb(17 17 17 / 0.07) 1px, transparent 1.2px);
-  background-size: 5px 5px;
-}
-
-/* Rounded sticker with a thin border and a hard offset shadow. */
-@utility sticker {
-  display: inline-block;
-  border: 2px solid var(--color-ink);
-  border-radius: 9999px;
-  padding: 0.35rem 0.9rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  box-shadow: 3px 3px 0 var(--color-ink);
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@utility animate-marquee {
-  animation: marquee 28s linear infinite;
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
 }

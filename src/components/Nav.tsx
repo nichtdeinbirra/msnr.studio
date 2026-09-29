@@ -48,7 +48,7 @@ export function Nav() {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
-          "border-b-2 border-ink bg-bg"
+          "border-b border-line bg-bg/80 backdrop-blur-xl"
         }`}
       >
         <nav

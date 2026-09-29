@@ -9,54 +9,44 @@
 export const site = {
   name: "MSNR",
   domain: "msnr.studio",
-  positioning: "Apps und Websites für Clubs, Events und Nightlife",
+  positioning: "Apps und Websites, die im Alltag funktionieren",
   owner: "Kimmo Meissner",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://msnr.studio",
 
-  /** Running text at the top of the page. */
-  marquee: ["Bald am Start: OFFSTG.", "Apps für Clubs & Events", "Made in Offenbach", "Jetzt Projekt anfragen"],
-
   hero: {
-    /** Headline lines; the line marked `highlight` gets the lime marker. */
-    lines: [
-      { text: "Kimmo baut" },
-      { text: "Apps für", highlight: true },
-      { text: "Nächte," },
-      { text: "die laufen." },
-    ],
-    intro:
-      "Ich baue Web-Apps und Websites für Clubs, Veranstalter und Events. Von der ersten Idee bis live, und du sprichst die ganze Zeit direkt mit mir.",
-    stickers: ["Made in Offenbach", "Ohne Agentur", "Direkt mit mir"],
-    /** Flyer-style details under the headline. */
-    details: [
+    greeting: "Hey, ich bin Kimmo 👋",
+    /** Headline; `highlight` is shown in lime. */
+    headline: { start: "Ich baue Apps und Websites, die", highlight: "im Alltag funktionieren." },
+    intro: "Von der ersten Idee bis live. Ohne Agentur, du sprichst die ganze Zeit direkt mit mir.",
+    facts: [
+      { label: "Aktuell", value: "OFFSTG." },
       { label: "Was", value: "Web-Apps & Websites" },
-      { label: "Für", value: "Clubs, Events, Nightlife" },
-      { label: "Wo", value: "Offenbach am Main" },
+      { label: "Aus", value: "Offenbach am Main" },
     ],
-    /** Photo of Kimmo. Drop the file at public/me.jpg and it appears. */
+    /** Photo of Kimmo. Drop the file at public/me.jpg and it appears next to the greeting. */
     photo: { src: "/me.jpg", alt: "Kimmo Meissner" },
   },
 
   process: {
-    title: "So läuft's",
+    title: "So arbeite ich",
     steps: [
       {
-        title: "Wir reden",
+        title: "Zuhören",
         text: "Du erzählst mir, was nervt oder fehlt. Ich frage nach, bis ich deinen Ablauf verstanden habe.",
       },
       {
-        title: "Ich baue",
+        title: "Bauen",
         text: "Ich arbeite mit AI-Tools wie Claude Code. Dadurch bin ich schneller und günstiger. Jeden Schritt teste ich selbst.",
       },
       {
-        title: "Es geht live",
-        text: "Du bekommst eine App, die läuft, und mich als festen Ansprechpartner, wenn etwas dazukommen soll.",
+        title: "Live gehen",
+        text: "Du bekommst etwas, das läuft, und mich als festen Ansprechpartner, wenn etwas dazukommen soll.",
       },
     ],
   },
 
   contact: {
-    headline: "Lust auf ein Projekt?",
+    headline: "Hast du eine Idee?",
     text: "Schreib mir ein paar Zeilen, was du vorhast.",
     email: "hello@msnr.studio",
   },
@@ -73,7 +63,7 @@ export const site = {
 
   nav: [
     { label: "Arbeiten", href: "#work" },
-    { label: "So läuft's", href: "#process" },
+    { label: "So arbeite ich", href: "#process" },
     { label: "Kontakt", href: "#contact" },
   ],
 } as const;

@@ -1,32 +1,20 @@
 import { site } from "@/content/site";
 import { Reveal } from "./Reveal";
-import { Container } from "./ui";
-
-const cardStyles = ["bg-bg md:-rotate-1", "bg-lime md:rotate-1 md:mt-8", "bg-pink md:-rotate-1"];
+import { Container, SectionHead } from "./ui";
 
 export function Process() {
   const { process } = site;
   return (
-    <section id="process" aria-labelledby="process-title" className="grain border-y-2 border-ink py-20 md:py-28">
+    <section id="process" aria-labelledby="process-title" className="border-t border-line py-20 md:py-32">
       <Container>
-        <h2 id="process-title" className="display text-[clamp(3.5rem,11vw,9rem)]">
-          {process.title}
-        </h2>
+        <SectionHead id="process-title" eyebrow="Ablauf" title={process.title} />
 
-        <ol className="mt-10 grid gap-5 md:mt-14 md:grid-cols-3 md:gap-6">
+        <ol className="grid gap-4 md:grid-cols-3 md:gap-5">
           {process.steps.map((step, i) => (
-            <Reveal
-              as="li"
-              key={step.title}
-              delay={i * 0.08}
-              className={`rounded-3xl border-2 border-ink p-6 shadow-[5px_5px_0_var(--color-ink)] md:p-8 ${cardStyles[i % cardStyles.length]}`}
-            >
-              <div className="flex items-start justify-between border-b-2 border-dashed border-ink pb-4">
-                <span className="display text-7xl">{String(i + 1).padStart(2, "0")}</span>
-                <span className="eyebrow text-ink">Schritt {i + 1}</span>
-              </div>
-              <h3 className="display mt-5 text-3xl">{step.title}</h3>
-              <p className="mt-3 leading-relaxed">{step.text}</p>
+            <Reveal as="li" key={step.title} delay={i * 0.06} className="rounded-3xl border border-line bg-surface p-6 md:p-8">
+              <span className="font-mono text-sm text-lime">0{i + 1}</span>
+              <h3 className="mt-8 text-xl font-medium">{step.title}</h3>
+              <p className="mt-2 leading-relaxed text-muted">{step.text}</p>
             </Reveal>
           ))}
         </ol>

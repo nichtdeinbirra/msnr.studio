@@ -1,84 +1,59 @@
+import { featured } from "@/content/projects";
 import { site } from "@/content/site";
-import { Marquee } from "./Marquee";
 import { Reveal } from "./Reveal";
 import { Shot, hasImage } from "./Shot";
 import { ButtonLink, Container } from "./ui";
 
-// Sticker positions around the headline, desktop only.
-const stickerStyles = [
-  "bg-pink -rotate-6 lg:right-[4%] lg:top-[6%]",
-  "bg-bg rotate-3 lg:right-[18%] lg:top-[46%]",
-  "bg-lime -rotate-3 lg:right-[2%] lg:top-[72%]",
-];
-
 export function Hero() {
   const { hero, contact } = site;
   const withPhoto = hasImage(hero.photo.src);
+  const wide = featured.shots.find((s) => s.device === "wide");
+  const panel = featured.shots.find((s) => s.src.includes("eventday"));
 
   return (
-    <section aria-labelledby="hero-title" className="grain pt-16 md:pt-20">
-      <Marquee />
-      <Container className="pb-16 pt-8 md:pb-24 md:pt-10">
-        <div className="eyebrow flex justify-between border-b-2 border-ink pb-3 text-ink">
-          <span>{site.name}. präsentiert</span>
-          <span>Offenbach am Main</span>
-        </div>
-
-        <div className="relative mt-10 md:mt-14">
+    <section aria-labelledby="hero-title" className="overflow-hidden pb-20 pt-32 md:pb-32 md:pt-44">
+      <Container>
+        <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-12">
           <Reveal>
-            <h1 id="hero-title" className="display text-[clamp(3.75rem,13vw,11.5rem)] leading-[1.14]">
-              {hero.lines.map((line) => (
-                <span key={line.text} className="relative block">
-                  {"highlight" in line && line.highlight ? (
-                    <span className="-ml-2 inline-block -rotate-1 bg-lime px-2 leading-[1.02]">{line.text}</span>
-                  ) : (
-                    line.text
-                  )}
-                </span>
-              ))}
+            <p className="eyebrow flex items-center gap-3">
+              {withPhoto && (
+                <Shot src={hero.photo.src} alt={hero.photo.alt} className="size-9 rounded-full border border-line-strong" />
+              )}
+              {hero.greeting}
+            </p>
+            <h1 id="hero-title" className="display mt-6 text-[clamp(2.75rem,5.5vw,4.5rem)]">
+              {hero.headline.start} <span className="text-lime">{hero.headline.highlight}</span>
             </h1>
-          </Reveal>
-
-          {withPhoto && (
-            <Reveal delay={0.15} className="mt-10 w-2/3 max-w-xs lg:absolute lg:right-[8%] lg:top-[2%] lg:mt-0 lg:w-[22%]">
-              <Shot
-                src={hero.photo.src}
-                alt={hero.photo.alt}
-                className="aspect-[4/5] w-full rotate-3 border-[6px] border-bg shadow-[6px_6px_0_var(--color-ink)]"
-              />
-            </Reveal>
-          )}
-
-          <ul className="mt-8 flex flex-wrap gap-3 lg:contents">
-            {hero.stickers.map((s, i) => (
-              <li
-                key={s}
-                className={`sticker lg:absolute ${stickerStyles[i % stickerStyles.length]} ${withPhoto && i === 0 ? "lg:hidden" : ""}`}
-              >
-                {s}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-12 grid gap-10 border-t-2 border-ink pt-8 md:mt-16 md:grid-cols-12 md:gap-8">
-          <div className="md:col-span-6">
-            <p className="max-w-lg text-lg leading-relaxed md:text-xl md:leading-relaxed">{hero.intro}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-muted md:text-xl md:leading-relaxed">{hero.intro}</p>
+            <div className="mt-9 flex flex-wrap gap-3">
               <ButtonLink href={`mailto:${contact.email}`}>Projekt anfragen</ButtonLink>
               <ButtonLink href="#work" variant="outline">
                 Arbeiten ansehen
               </ButtonLink>
             </div>
-          </div>
-          <dl className="grid grid-cols-3 gap-4 self-end md:col-span-6">
-            {hero.details.map((d) => (
-              <div key={d.label} className="border-l-2 border-ink pl-3">
-                <dt className="eyebrow">{d.label}</dt>
-                <dd className="mt-1 font-medium leading-snug">{d.value}</dd>
+
+            <dl className="mt-14 flex flex-wrap gap-x-10 gap-y-5 border-t border-line pt-6">
+              {hero.facts.map((f) => (
+                <div key={f.label}>
+                  <dt className="text-sm text-muted">{f.label}</dt>
+                  <dd className="mt-1 font-medium">{f.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
+
+          {wide && panel && (
+            <Reveal delay={0.15} className="relative mx-auto w-full max-w-xl lg:max-w-none">
+              <div className="relative pb-[38%] pl-[18%] lg:-mr-24">
+                <Shot src={wide.src} alt={wide.alt} className="w-full rounded-2xl border border-line shadow-[0_40px_80px_-30px_rgb(0_0_0/0.9)]" />
+                <Shot
+                  src={panel.src}
+                  alt={panel.alt}
+                  className="absolute bottom-0 left-0 w-[46%] rounded-2xl border border-line-strong shadow-[0_40px_80px_-20px_rgb(0_0_0/0.95)]"
+                />
               </div>
-            ))}
-          </dl>
+            </Reveal>
+          )}
         </div>
       </Container>
     </section>

@@ -30,10 +30,10 @@ export type Project = {
 export const featured: Project = {
   slug: "offstg",
   name: "OFFSTG.",
-  tagline: "Eventplanung für Clubnächte",
+  tagline: "Web-App für Eventplanung",
   summary:
-    "Clubteams planen ihre Nächte oft über Tabellen, WhatsApp-Gruppen und Zettel. OFFSTG. bringt alles in eine App: Event planen, Tickets verkaufen, Gäste an der Tür einchecken und danach sehen, was hängen geblieben ist.",
-  highlights: ["QR-Check-in an der Tür, auch offline", "Ticket-Vorverkauf mit Stripe", "Gewinn und Marge nach jeder Nacht"],
+    "Veranstalter planen Events oft über Tabellen, WhatsApp-Gruppen und Zettel. OFFSTG. bringt alles in eine App: Event planen, Tickets verkaufen, Gäste am Einlass einchecken und danach sehen, was hängen geblieben ist.",
+  highlights: ["QR-Check-in am Einlass, auch offline", "Ticket-Vorverkauf mit Stripe", "Gewinn und Marge nach jedem Event"],
   status: "Bald live",
   shots: [
     {
@@ -51,7 +51,7 @@ export const featured: Project = {
     {
       src: "/work/offstg/eventday.png",
       alt: "OFFSTG. Eventtag-Modus mit Gästezahl, Ablauf und Ticket-Scanner",
-      caption: "Eventtag-Modus an der Tür · Beispieldaten",
+      caption: "Eventtag-Modus am Einlass · Beispieldaten",
       device: "panel",
     },
   ],

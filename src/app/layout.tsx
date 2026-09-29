@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { MotionProvider } from "@/components/MotionProvider";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -12,13 +12,6 @@ const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
   subsets: ["latin"],
   weight: ["800"],
-  display: "swap",
-});
-
-const anton = Anton({
-  variable: "--font-anton",
-  subsets: ["latin", "latin-ext"],
-  weight: "400",
   display: "swap",
 });
 
@@ -57,15 +50,15 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f1ede4",
-  colorScheme: "light",
+  themeColor: "#0c0c0c",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="de"
-      className={`${bricolage.variable} ${anton.variable} ${geist.variable} ${geistMono.variable}`}
+      className={`${bricolage.variable} ${geist.variable} ${geistMono.variable}`}
     >
       <body className="min-h-dvh bg-bg text-ink">
         <a

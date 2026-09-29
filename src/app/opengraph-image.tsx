@@ -17,25 +17,20 @@ export default async function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: 64,
-          background: "#F1EDE4",
-          color: "#111111",
+          padding: 72,
+          background: "#0C0C0C",
+          color: "#F2F2F2",
         }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26, borderBottom: "4px solid #111", paddingBottom: 16 }}>
-          <span>{site.name}. präsentiert</span>
-          <span>Offenbach am Main</span>
+        <div style={{ display: "flex", fontSize: 44, fontWeight: 800, letterSpacing: -2 }}>
+          {site.name}
+          <span style={{ color: "#648BFF" }}>.</span>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", fontSize: 104, fontWeight: 800, lineHeight: 1, letterSpacing: -4 }}>
-          {site.hero.lines.map((line) => (
-            <div key={line.text} style={{ display: "flex" }}>
-              <span style={"highlight" in line ? { background: "#C6F432", padding: "0 12px", margin: "0 -12px" } : {}}>
-                {line.text.toUpperCase()}
-              </span>
-            </div>
-          ))}
+        <div style={{ display: "flex", flexDirection: "column", fontSize: 72, lineHeight: 1.1, letterSpacing: -2 }}>
+          <span>{site.hero.headline.start}</span>
+          <span style={{ color: "#C6F432" }}>{site.hero.headline.highlight}</span>
         </div>
-        <div style={{ display: "flex", fontSize: 30, color: "#5C5A57" }}>{site.positioning}</div>
+        <div style={{ display: "flex", fontSize: 28, color: "#8F8F8F" }}>{site.owner} · Offenbach am Main</div>
       </div>
     ),
     size,
