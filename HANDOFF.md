@@ -22,3 +22,8 @@ Stand: 01.10.2026.
 3. Ponyhof Club fragen, ob er genannt werden darf.
 4. Netlify-Badge „Powered by Netlify“ unter Project configuration → General abschalten.
 5. Dieses Repo bei Netlify verbinden (Build `npm run build`, Publish `out`, steht in `netlify.toml`), dann entfällt der manuelle Upload.
+
+### Deploy (neu)
+
+- Live-Seite ist `site/index.html` (eine statische Datei, enthält Impressum, Datenschutz und Konzeptseite eingebettet). `netlify.toml` veröffentlicht `site/` ohne Build. Die Next.js-Quellen unter `src/` sind nicht mehr live.
+- Änderungen: `site/index.html` bearbeiten, committen, nach `main` pushen. Netlify muss dafür einmalig mit dem GitHub-Repo verbunden sein.
